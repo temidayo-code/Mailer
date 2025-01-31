@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MailVibe</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="shortcut icon"
+      href="assets/mailVibe-logo.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <img
+          src="assets/mailVibe-logo-white.png"
+          alt="MailVibe Logo"
+          class="logo"
+        />
+      </div>
+
+      <div class="form-container">
+        <form id="emailForm">
+          <div class="form-group">
+            <label for="recipients">Recipients</label>
+            <input
+              type="text"
+              id="recipients"
+              required
+              placeholder="Enter email addresses separated by commas"
+            />
+            <div class="csv-upload">
+              <label for="csvFile" class="csv-label">Or Upload CSV</label>
+              <input
+                type="file"
+                id="csvFile"
+                accept=".csv"
+                onChange="handleCSVUpload(event)"
+              />
+            </div>
+            <div class="helper-text">
+              CSV file should have emails in first column
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject Line</label>
+            <input
+              type="text"
+              id="subject"
+              required
+              placeholder="Enter your email subject"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="content">Email Content</label>
+            <textarea
+              id="content"
+              required
+              placeholder="Enter your email content here. HTML and CSS supported."
+            ></textarea>
+            <div class="helper-text">
+              You can use HTML and CSS to style your email
+            </div>
+          </div>
+
+          <div class="button-group">
+            <button type="submit">Send Email</button>
+          </div>
+        </form>
+        <div id="status"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
